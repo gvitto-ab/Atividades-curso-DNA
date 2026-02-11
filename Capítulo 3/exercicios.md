@@ -139,15 +139,39 @@ calculaRaizesQuadradas([1, 4, 9, 16, 25]);
 ```
 
 ## Exercício 10 - E tem alguma diferença?
-
+O **forEach** e o **map** percorrem um array elemento por elemento, mas têm propósitos diferentes: o **forEach** é usado quando você quer apenas executar uma ação para cada item, como imprimir valores ou alterar algo externo, e por isso **não retorna nada**; já o **map** é usado quando você quer **transformar os elementos do array**, pois ele cria e retorna **um novo array** com o resultado dessa transformação, sem modificar o array original.
 
 
 ## Exercício 11 - A pequena ovelha Dolly
 ``` javascript
+function clonaObjeto(objeto) {
+  var copia = {};
 
+  Object.getOwnPropertyNames(objeto).forEach(function (propriedade) {
+    copia[propriedade] = objeto[propriedade];
+  });
+
+  return copia;
+}
+
+clonaObjeto({ nome: 'Dolly', idade: 5 });
 ```
 
 ## Exercício 12 - Limpando o estoque
 ``` javascript
+function existeProdutosDatados(produtos, dataReferencia) {
+  var dataBase = dataReferencia ? new Date(dataReferencia) : new Date();
 
+  return produtos.some(function (produto) {
+    return new Date(produto.dataValidade.split('/').reverse().join('-')) < dataBase;
+  });
+}
+
+var produtos = [
+  { nome: 'Cereal', preco: 10, dataValidade: '21/02/2017' },
+  { nome: 'Suco de Abacaxi', preco: 12, dataValidade: '01/01/2017' },
+  { nome: 'Torta de frango', preco: 25, dataValidade: '07/07/2017' }
+];
+
+existeProdutosDatados(produtos, '2017-03-01');
 ```
