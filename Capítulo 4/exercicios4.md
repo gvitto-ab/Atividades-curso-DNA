@@ -17,7 +17,12 @@ calculaDistancia(ruas);
 
 ## Exercício 2 - Tem alguém ai?
 ``` javascript
-
+function isListaVazia(lista) {
+  var iterador = lista[Symbol.iterator
+  return iterador.next().done;
+}
+isListaVazia([]);
+isListaVazia([1, 2, 3]);
 ```
 
 ## Exercício 3 - S-o-l-e-t-r-a-n-d-o
