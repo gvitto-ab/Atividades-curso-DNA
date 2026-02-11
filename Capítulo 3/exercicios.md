@@ -24,22 +24,71 @@ dobrar([1, 2, 3]);
 
 ## Exercício 3 - NÃO ESTOU BRAVO
 ``` javascript
+function caps(palavras) {
+  return palavras.map(function (palavra) {
+    return palavra.toUpperCase();
+  });
+}
 
+caps(['oi', 'tudo', 'bem?']);
 ```
 
 ## Exercício 4 - Equilibrio de parênteses
 ``` javascript
+function validaParenteses(parenteses) {
+  var arrayParenteses = parenteses.split('');
 
+  var soma = arrayParenteses.reduce(function (total, caractere) {
+    if (total < 0) {
+      return total;
+    }
+
+    if (caractere === '(') {
+      return total + 1;
+    }
+
+    if (caractere === ')') {
+      return total - 1;
+    }
+
+    return total;
+  }, 0);
+
+  return soma === 0;
+}
 ```
 
 ## Exercício 5 - Sem duplicações
 ``` javascript
+function removeDuplicatas(numeros) {
+  return numeros.reduce(function (resultado, numero) {
+    if (!resultado.find(function (item) { return item === numero; })) {
+      resultado.push(numero);
+    }
+    return resultado;
+  }, []);
+}
 
+removeDuplicatas([1, 2, 3, 3, 4, 5]);
+``
 ```
 
 ## Exercício 6 - Reprovado!
 ``` javascript
+function aprovados(alunos, mediaMinima) {
+  return alunos.filter(function (aluno) {
+    return aluno.media >= mediaMinima;
+  });
+}
 
+var alunos = [
+  { nome: 'Diogo', media: 5.5 },
+  { nome: 'Julia', media: 9.5 },
+  { nome: 'Roberto', media: 1.5 },
+  { nome: 'Tiago', media: 6.0 }
+];
+
+aprovados(alunos, 6.5);
 ```
 
 ## Exercício 7 - Dados precisos
