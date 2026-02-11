@@ -29,10 +29,26 @@ for (var atributo in Casa) {
 
 ## Exercício 4 - Pare aqui senhor motorista
 ``` javascript
-
+function percorreRuas(ruas, parada) {
+  for (var rua of ruas) {
+    console.log(rua);
+    if (rua === parada) {
+      break;
+    }
+  }
+}
+percorreRuas(['Rua 1', 'Rua 2', 'Rua 3'], 'Rua 2');
 ```
 
 ## Exercício 5 - Não vá por ali!
 ``` javascript
-
+function percorreRuas(ruas, ruaPerigosa) {
+  for (var rua of ruas) {
+    if (rua === ruaPerigosa) {
+      continue;
+    }
+    console.log(rua);
+  }
+}
+percorreRuas(['Rua 1', 'Rua 2', 'Rua 3'], 'Rua 2');
 ```
