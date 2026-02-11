@@ -93,17 +93,49 @@ aprovados(alunos, 6.5);
 
 ## Exercício 7 - Dados precisos
 ``` javascript
+function buscar(propriedade, valor, lista) {
+  return lista.find(function (item) {
+    return item[propriedade] === valor;
+  });
+}
 
+var lista = [
+  { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 },
+  { nome: 'Emilly', sobrenome: 'Barbosa', idade: 46 },
+  { nome: 'Vitória', sobrenome: 'Costa', idade: 83 },
+  { nome: 'Erick', sobrenome: 'Ferreira', idade: 16 }
+];
+
+buscar('nome', 'Tânia', lista);
 ```
 
 ## Exercício 8 - Calculadora Humana
 ``` javascript
+function calculaAreaTotal(dimensoes) {
+  return dimensoes.reduce(function (total, dimensao) {
+    return total + (dimensao.altura * dimensao.comprimento);
+  }, 0);
+}
 
+var dimensoes = [
+  { altura: 10, comprimento: 20 },
+  { altura: 2, comprimento: 4 },
+  { altura: 1, comprimento: 1 },
+  { altura: 50, comprimento: 50 }
+];
+
+calculaAreaTotal(dimensoes);
 ```
 
 ## Exercício 9 - Raízes Quadradas
 ``` javascript
+function calculaRaizesQuadradas(numeros) {
+  return numeros.map(function (numero) {
+    return Math.sqrt(numero);
+  });
+}
 
+calculaRaizesQuadradas([1, 4, 9, 16, 25]);
 ```
 
 ## Exercício 10 - E tem alguma diferença?
