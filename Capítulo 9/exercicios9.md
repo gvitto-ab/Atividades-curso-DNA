@@ -17,12 +17,22 @@ console.log(elemento);
 
 ## Exercício 2 - Maçaroca de Strings
 ``` javascript
+function criaMacaroca(lista) {
+  return lista.reduce(function (resultado, item) {
+    return `${resultado}${item}`;
+  }, '');
+}
 
+criaMacaroca(['a', 'b', 'c', 'd']);
 ```
 
 ## Exercício 3 - Quero o seu endereço completo
 ``` javascript
+function montaEnderecoCompleto(rua, cidade, numero, cep) {
+  return `${rua}, ${numero} - ${cidade}, ${cep}`;
+}
 
+montaEnderecoCompleto('Rua das Flores', 'São Paulo', 123, '01234-567');
 ```
 
 ## Exercício 4 - Seja muito bem-vindo!
