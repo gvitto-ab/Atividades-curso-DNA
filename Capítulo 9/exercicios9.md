@@ -37,10 +37,15 @@ montaEnderecoCompleto('Rua das Flores', 'São Paulo', 123, '01234-567');
 
 ## Exercício 4 - Seja muito bem-vindo!
 ``` javascript
-
+let nome = 'usuario';
+console.log(`Bem-vindo ${nome}!`);
 ```
 
 ## Exercício 5 - Cálculo interpolado
 ``` javascript
+function soma(a, b) {
+  console.log(`${a} + ${b} = ${a + b}`);
+}
 
+soma(1, 2);
 ```
